@@ -1,0 +1,31 @@
+<form #myForm="ngForm" novalidate>
+    <p>{{myForm.value | json}}</p>
+    <div>
+      <label>Name</label>
+      <input type="text" name="name" ngModel required/>
+    </div>
+     <p>{{myForm.valid}}</p>
+    <div>
+      <label>Birth Year</label>
+      <input type="text" name="birthYear" ngModel required/>
+    </div>
+  
+    <div ngModelGroup="Location">
+      <h3>Location</h3>
+      <div>
+        <label>Country</label>
+        <input type="text" name="country" ngModel required/>
+      </div>
+      <div>
+        <label>City</label>
+        <input type="text" name="city" ngModel />
+      </div>
+    </div>
+  
+    <div>
+        <label>Phone number </label>
+        <input type="text" name="phoneNumber[1]"ngModel required/>
+    </div>
+  
+    <button type="submit" disabled="myForm.invalid">Register</button>
+  </form>
